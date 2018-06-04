@@ -12,6 +12,8 @@ services:
             - ./log/www/:/var/www/log
     nginx:
         image: nginx:1.13
+        depends_on:
+            - app
         ports:
             - 8081:80
         restart: always
